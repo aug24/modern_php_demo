@@ -1,0 +1,14 @@
+{
+  "require": {
+    "slim/slim": "^3.6.0"
+  },
+  "require-dev": {
+    "simpletest/simpletest": "^1.1",
+    "squizlabs/php_codesniffer": "^3"
+  },
+  "scripts": {
+    "test": "php tests/alltests.php",
+    "lint": "phpcs --ignore=vendor --standard=PSR2 .",
+    "fix": "phpcbf --ignore=vendor --standard=PSR2 ."
+  }
+}
