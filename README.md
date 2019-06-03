@@ -1,3 +1,6 @@
+# Instructions to create this repository from scratch.
+
+## Initialise, add basic dependencies
 ```
 git init
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -28,6 +31,7 @@ EXPOSE 80
 EOF
 ```
 
+## Add code
 ```
 cat >index.php <<EOF
 <?php
@@ -72,6 +76,8 @@ class AllTests extends TestSuite {
 EOF
 ```
 
+## Add tests
+
 ```
 cat >tests/hallotest.php <<EOF
 <?php
@@ -99,9 +105,13 @@ class TestHallo extends UnitTestCase {
 EOF
 ```
 
+## Run tests
+
 ```
 bin/composer test
 ```
+
+## Build and run
 
 ```
 docker build -t test .
