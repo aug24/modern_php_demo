@@ -1,8 +1,14 @@
 # Instructions to create this repository from scratch.
 
-## Initialise, add basic dependencies
+## Initialise git
 ```
 git init
+echo vendor >> .gitignore
+```
+
+## Add basic php dependencies
+
+```
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 mkdir bin functions tests
 php composer-setup.php --install-dir=bin --filename=composer
@@ -22,7 +28,10 @@ cat composer.json.orig \
 rm composer.json.orig
 
 bin/composer install
-echo vendor >> .gitignore
+```
+## Add basic docker dependencies
+
+```
 cat >Dockerfile <<EOF
 FROM php:5-apache
 RUN docker-php-ext-install sockets pdo pdo_mysql mysqli
